@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antigravity - Interactive Physics</title>
+</head>
+
+<body>
+  <div id="app">
+    <aside id="hud-panel">
+      <header>
+        <h1>ANTIGRAVITY</h1>
+        <div class="status-indicator">SYSTEM ONLINE</div>
+      </header>
+
+      <div class="hud-section">
+        <h3>WORLD SETTINGS</h3>
+        <div class="control-group">
+          <label>Gravity Y <span id="grav-y-val">1.0</span></label>
+          <input type="range" id="gravity-y" min="-2" max="2" step="0.1" value="1">
+        </div>
+        <div class="control-group">
+          <label>Gravity X <span id="grav-x-val">0.0</span></label>
+          <input type="range" id="gravity-x" min="-2" max="2" step="0.1" value="0">
+        </div>
+        <div class="control-group">
+          <label>Time Scale <span id="time-scale-val">1.0</span></label>
+          <input type="range" id="time-scale" min="0.1" max="3" step="0.1" value="1">
+        </div>
+        <div class="button-row">
+          <button id="zero-grav-btn" class="hud-btn warning">ZERO G</button>
+          <button id="reset-btn" class="hud-btn danger">RESET</button>
+        </div>
+      </div>
+
+      <div class="hud-section">
+        <h3>PHYSICS</h3>
+        <div class="control-group">
+          <label>Bounciness <span id="bounce-val">0.9</span></label>
+          <input type="range" id="restitution" min="0.1" max="1.2" step="0.1" value="0.9">
+        </div>
+        <div class="control-group">
+          <label>Air Friction <span id="friction-val">0.01</span></label>
+          <input type="range" id="friction-air" min="0" max="0.1" step="0.001" value="0.01">
+        </div>
+        <button id="attract-btn" class="hud-btn active-toggle">ENABLE ATTRACTION</button>
+      </div>
+
+      <div class="hud-section">
+        <h3>ACTIONS</h3>
+        <button id="spawn-btn" class="hud-btn primary">SPAWN BATCH</button>
+        <button id="pulse-btn" class="hud-btn accent">PULSE EXPLOSION</button>
+        <!-- <button id="clear-btn" class="hud-btn">CLEAR OBJECTS</button> -->
+      </div>
+
+      <footer>
+        <p>DRAG TO INTERACT</p>
+      </footer>
+    </aside>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
